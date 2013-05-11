@@ -1,0 +1,5 @@
+%form{:action => "/#show-links", :method => "get", :class => "search"}
+  <input type="text" name="search" placeholder="search?"
+  - if params[:search]
+    value="#{params[:search]}"
+  >
