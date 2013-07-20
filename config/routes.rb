@@ -1,5 +1,10 @@
 Noo::Application.routes.draw do
 
+  resources :ingredients
+  
+  resources :stacks
+
+
   # get "welcome/index"
 
     root :to => 'welcome#index'

@@ -4,6 +4,7 @@
   <title>noo stack</title>
   <link rel="shortcut icon" href="/favicon.ico?05112013" /> 
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -11,13 +12,14 @@
 <div class="full-width-top">
     &nbsp;
     <div class="search">
-      <%= render 'search' %>  
+      <%= render '/welcome/search' %>  
     </div>
 </div>
 
 <%= render '/layouts/nav' %>
 
-<%= yield %>
-
+<div id="view-wrapper">
+  <%= yield %>
+</div>
 </body>
 </html>
