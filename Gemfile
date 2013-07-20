@@ -10,6 +10,8 @@ gem 'sqlite3'
 gem 'json'
 gem 'thin'
 gem 'haml'
+gem 'slim'
+# gem 'devise'
 
 # Gems used only for assets and not required
 # in production environments by default.
