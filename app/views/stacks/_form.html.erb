@@ -1,13 +1,13 @@
 <%= form_for(@stack) do |f| %>
   <% if @stack.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@stack.errors.count, "error") %> prohibited this stack from being saved:</h2>
+      <h2><%= pluralize(@stack.errors.count, "error") %> please check red fields:</h2>
 
-      <ul>
+      <ol>
       <% @stack.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
-      </ul>
+      </ol>
     </div>
   <% end %>
 
@@ -18,28 +18,28 @@
     <%= f.label :description %><%= f.text_area :description %>
   </div>
 
-
+<!-- 
+  <select>
+    <%# Ingredient::BASE.each do |i| %>
+      <option value="<%# i %>"><%# i  %></option>
+    <%# end %>
+  </select>
+ -->
 
   <h1 class="ingredients-header">Ingreditents</h1>
+
+<div class="ingredients">  
   <%= f.fields_for :ingredients do |i| %>
    <div class="field cf">
       <%= i.label :name, "Ingredient Name"  %><%= i.text_field :name, :rows => 3 %><br />
    </div>
   <% end %>
+</div>
+
   <p class="add-link"><%= link_to_add_fields "<i class='icon-plus'></i> Add Ingedient".html_safe, f, :ingredients %></p>
-
-  
-
-
-
-
-
-
-
-
 
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "button" %>
   </div>
 <% end %>
