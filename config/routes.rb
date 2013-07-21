@@ -12,6 +12,7 @@ Noo::Application.routes.draw do
 
  get 'users/:user' => 'stacks#by_user'
 
+ get '/images' => 'stacks#get_images'
 
   # get "welcome/index"
 

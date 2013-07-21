@@ -8,7 +8,35 @@ $(function() {
    $( ".ingredients input" ).autocomplete({
       source: availableTags
    });
+
+
+$("#stack_name").focusout(function() {
+  var name = $(this).val();
+  // alert(name);
+
+  var data = $.getJSON('/images.json?name='+ name, function(data) {
+      var images = data.data.images;
+
+      // console.log("DATA: ",images);
+      $('<h1>Images: '+name +'</h1>').appendTo('#stack-images');
+      $.each(images, function(index, data) {
+          // $("#stack-images img").remove();
+
+          $('<img/>').attr('src', data).appendTo('#stack-images');
+      });
+
+    //   $.each(data.images, function() {
+    //     alert("success")
+    // });
+
+
+  });
+
+
 });
+
+
+});//ready
 
 
 function add_fields(link, association, content) {
