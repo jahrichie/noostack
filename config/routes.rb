@@ -10,7 +10,7 @@ Noo::Application.routes.draw do
   
   end
 
- get 'users/:username' => 'stacks#by_user'
+ get 'users/:user' => 'stacks#by_user'
 
 
   # get "welcome/index"

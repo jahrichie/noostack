@@ -26,7 +26,12 @@
   </select>
  -->
 
-  <h1 class="ingredients-header">Ingreditents</h1>
+<h1 class="images-header">Images</h1>
+<% @stack_imgs.each do |img| %>
+  <%=  image_tag img, :class => 'google-image' %><br><br>
+<% end %>
+
+<h1 class="ingredients-header">Ingreditents</h1>
 
 <div class="ingredients">  
   <%= f.fields_for :ingredients do |i| %>

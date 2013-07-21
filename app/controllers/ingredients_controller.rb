@@ -42,6 +42,7 @@ class IngredientsController < ApplicationController
   def create
     @ingredient = Ingredient.new(params[:ingredient])
 
+  
     respond_to do |format|
       if @ingredient.save
         format.html { redirect_to @ingredient, notice: 'Ingredient was successfully created.' }

@@ -1,11 +1,17 @@
+require 'net/http'
+require 'json'
+
 class StacksController < ApplicationController
   before_filter :authenticate_user!, :only => [:create, :new]
 
-  # GET /stacks
-  # GET /stacks.json
-
   def by_user
-    @stacks_by_user = Stack.find_all_by_user_id(1)
+   if params[:user].is_number? #find by users id or screen name
+      @stack = Stack.find(params[:user])
+      @stacks_by_user = Stack.find_all_by_user_id(params[:user])
+   else
+      @stack = Stack.find_by_user_id(User.find_by_username("params[:user]"))
+      @stacks_by_user = Stack.find_all_by_user_id(User.find_by_username(params[:user]))
+   end  
   end
 
   def index
@@ -35,10 +41,23 @@ class StacksController < ApplicationController
     
     2.times {@stack.ingredients.build}
 
+
+    _url            = 'http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=fuzzy%20monkey'
+    _response       = Net::HTTP.get_response(URI.parse(_url))
+    _response_hash  = JSON.parse _response.body
+    structure       =  _response_hash.deep_symbolize_keys 
+    @stack_imgs      = structure[:responseData][:results].map { |r| r["url"]}
+    
+
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @stack }
     end
+
+
+
+
   end
 
   # GET /stacks/1/edit
