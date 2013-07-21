@@ -1,6 +1,7 @@
 h1 Listing stacks
 table
   tr
+    th Author
     th Name
     th Description
     th Ingredients
@@ -9,13 +10,14 @@ table
     th
   - @stacks.each do |stack|
     tr
+      td= User.find(stack.user_id).username
       td= stack.name
       td= stack.description
       - _ingredients = stack.ingredients.map{|i| i[:name]}
       td= _ingredients.present? ? _ingredients.to_sentence : "Blank"
-      td= link_to 'Show', stack
-      td= link_to 'Edit', edit_stack_path(stack)
-      td= link_to 'Destroy', stack, method: :delete, confirm: 'Are you sure?' 
+      - if user_signed_in?  && stack.user_id == current_user.id
+        td= link_to 'Show', stack
+        td= link_to 'Edit', edit_stack_path(stack)
+        td= link_to 'Destroy', stack, method: :delete, confirm: 'Are you sure?' 
       /! users.map{|u| u[:email]}
-br/
-= link_to 'New Stack', new_stack_path
+br

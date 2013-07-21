@@ -3,6 +3,11 @@ class StacksController < ApplicationController
 
   # GET /stacks
   # GET /stacks.json
+
+  def by_user
+    @stacks_by_user = Stack.find_all_by_user_id(1)
+  end
+
   def index
     @stacks = Stack.all
 

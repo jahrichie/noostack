@@ -38,6 +38,10 @@
 
   <p class="add-link"><%= link_to_add_fields "<i class='icon-plus'></i> Add Ingedient".html_safe, f, :ingredients %></p>
 
+  <!-- foo -->
+   <%#logger.debug "FOOBAR #{current_user.id} " %>
+
+  <%= f.hidden_field :user_id, :value => current_user.id %>
 
   <div class="actions">
     <%= f.submit :class => "button" %>

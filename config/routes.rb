@@ -1,10 +1,16 @@
 Noo::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users do 
+
+  end
 
   resources :ingredients
+
+  resources :stacks do 
   
-  resources :stacks
+  end
+
+ get 'users/:username' => 'stacks#by_user'
 
 
   # get "welcome/index"

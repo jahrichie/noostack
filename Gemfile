@@ -16,6 +16,7 @@ gem 'haml'
 gem 'slim'
 gem 'heroku'
 gem 'devise'
+gem 'jquery-validation-rails'
 
 group :production do
   gem 'pg'

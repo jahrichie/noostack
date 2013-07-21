@@ -1,5 +1,12 @@
 module ApplicationHelper
 
+  def user_with_icon(current_user)
+    link_to "<i class='icon-user'></i>".html_safe + " " + truncate((current_user.username), :length => 40,:omission => "..."), current_userpath(current_user)
+  end
+  
+  def current_userpath(current_user)
+    current_userpath = "/users/"+current_user.username
+  end
 
 
   def link_to_add_fields(name, f, association)
