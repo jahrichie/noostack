@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @stack_image.name %>
+</p>
+
+<p>
+  <b>Stack:</b>
+  <%= @stack_image.stack_id %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @stack_image.url %>
+</p>
+
+
+<%= link_to 'Edit', edit_stack_image_path(@stack_image) %> |
+<%= link_to 'Back', stack_images_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130721024558) do
+ActiveRecord::Schema.define(:version => 20130721191927) do
 
   create_table "ingredients", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(:version => 20130721024558) do
     t.integer  "stack_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "stack_images", :force => true do |t|
+    t.string   "name"
+    t.integer  "stack_id"
+    t.string   "url"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "stacks", :force => true do |t|

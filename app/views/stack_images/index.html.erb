@@ -1,0 +1,27 @@
+<h1>Listing stack_images</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Stack</th>
+    <th>Url</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @stack_images.each do |stack_image| %>
+  <tr>
+    <td><%= stack_image.name %></td>
+    <td><%= stack_image.stack_id %></td>
+    <td><%= stack_image.url %></td>
+    <td><%= link_to 'Show', stack_image %></td>
+    <td><%= link_to 'Edit', edit_stack_image_path(stack_image) %></td>
+    <td><%= link_to 'Destroy', stack_image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Stack image', new_stack_image_path %>

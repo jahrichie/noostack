@@ -1,5 +1,8 @@
 Noo::Application.routes.draw do
 
+  resources :stack_images
+
+
   devise_for :users do 
 
   end
