@@ -18,13 +18,7 @@
     <%= f.label :description %><%= f.text_area :description %>
   </div>
 
-<!-- 
-  <select>
-    <%# Ingredient::BASE.each do |i| %>
-      <option value="<%# i %>"><%# i  %></option>
-    <%# end %>
-  </select>
- -->
+
 <div id="stack-images">
   <!-- <h1 class="images-header">Images</h1> -->
 
@@ -44,14 +38,15 @@
 <div class="ingredients">  
   <%= f.fields_for :ingredients do |i| %>
    <div class="field cf">
-      <%= i.label :name, "Ingredient Name"  %><%= i.text_field :name, :rows => 3 %><br />
+      <%= i.label :name, "Ingredient Name"  %><%= i.text_field :name, :rows => 3 %> 
+      <%= i.text_field :percentage,   :placeholder => 'Percentage',:class => 'Percentage' %><br />
    </div>
   <% end %>
 </div>
 
   <p class="add-link"><%= link_to_add_fields "<i class='icon-plus'></i> Add Ingedient".html_safe, f, :ingredients %></p>
 
-  <!-- foo -->
+ 
 
   <%= f.hidden_field :user_id, :value => current_user.id %>
 

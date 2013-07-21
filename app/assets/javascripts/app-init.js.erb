@@ -1,5 +1,12 @@
 $(function() {
   // alert("asd")
+
+   $('.chart').easyPieChart({
+         animate: 2000
+    });
+
+   
+  
   <% 
     _all        =   Ingredient.all
     _all_names  =   _all.map { |a| a.name }  

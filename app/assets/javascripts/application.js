@@ -13,4 +13,5 @@
 //= require jquery_1.7.2
 //= require jquery_ujs
 //= require foundation
+//= require jquery.easy-pie-chart
 //= require app-init

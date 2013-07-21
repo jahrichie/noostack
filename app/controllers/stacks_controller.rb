@@ -72,8 +72,8 @@ class StacksController < ApplicationController
   def create
     @stack = Stack.new(params[:stack])
 
-    2.times {@stack.ingredients.build}
-    1.times {@stack.stack_images.build}
+    # 2.times {@stack.ingredients.build}
+    # 1.times {@stack.stack_images.build}
 
 
     respond_to do |format|
