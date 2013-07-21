@@ -3,6 +3,7 @@ h1 Listing stacks
 
 table
   tr
+    th 
     th Author
     th Name
     th Description
@@ -12,6 +13,8 @@ table
     th
   - @stacks.each do |stack|
     tr
+      - _images = stack.stack_images.map{|i| i[:url]}
+      td.thumb= image_tag _images.sample
       td= User.find(stack.user_id).username
       td= stack.name
       td= stack.description
