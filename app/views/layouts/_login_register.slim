@@ -1,0 +1,12 @@
+#login-register
+  ul.make-or-search.login-register
+    li
+      - if  user_signed_in? 
+        a.current-user href="#" 
+          = current_user.email
+        = link_to "X", destroy_user_session_path, method: 'delete', confirm: 'Are you sure?'
+
+
+      - else 
+        = link_to "Sign Up", new_user_registration_path
+        = link_to "Login", new_user_session_path

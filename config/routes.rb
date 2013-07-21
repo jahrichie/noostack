@@ -1,5 +1,7 @@
 Noo::Application.routes.draw do
 
+  devise_for :users
+
   resources :ingredients
   
   resources :stacks
