@@ -6,7 +6,7 @@ class StacksController < ApplicationController
 
   def by_user
    if params[:user].is_number? #find by users id or screen name
-      @stack = Stack.find(params[:user])
+    # raise "int"
       @stacks_by_user = Stack.find_all_by_user_id(params[:user])
    else
       @stack = Stack.find_by_user_id(User.find_by_username("params[:user]"))
@@ -71,6 +71,10 @@ class StacksController < ApplicationController
   # POST /stacks.json
   def create
     @stack = Stack.new(params[:stack])
+
+    2.times {@stack.ingredients.build}
+    1.times {@stack.stack_images.build}
+
 
     respond_to do |format|
       if @stack.save

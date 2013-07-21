@@ -76,7 +76,7 @@ class StackImagesController < ApplicationController
     @stack_image.destroy
 
     respond_to do |format|
-      format.html { redirect_to stack_images_url }
+      format.html { redirect_to request.referer }
       format.json { head :no_content }
     end
   end

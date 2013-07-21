@@ -13,7 +13,10 @@
 <h3>images</h3>
  
   <% for image in @stack.stack_images %>
-    <%= h image_tag image.name, :class => 'google-image-show' %></li>
+    <div class="stack-images-wrapper">
+      <%= h image_tag image.name, :class => 'google-image-show' %></li>
+      <%= link_to 'Destroy', image, class: 'image-destroyer',method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
   <% end %>
  
 
@@ -24,6 +27,7 @@
 <ol>
   <% for ingredient in @stack.ingredients %>
   <li><%= h ingredient.name %></li>
+
   <% end %>
 </ol>
 

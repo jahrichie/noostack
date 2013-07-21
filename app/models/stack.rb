@@ -2,9 +2,9 @@ class Stack < ActiveRecord::Base
   default_scope order('created_at DESC')
 
   #relationships
-  has_many :ingredients
-  has_many :stack_images
-
+  has_many :ingredients,:dependent => :destroy
+  has_many :stack_images, :dependent => :destroy
+  #
   accepts_nested_attributes_for :ingredients, :reject_if => lambda { |a| a[:name].blank? }, :allow_destroy => true
   accepts_nested_attributes_for :stack_images, :reject_if => lambda { |a| a[:name].blank? }, :allow_destroy => true
 
