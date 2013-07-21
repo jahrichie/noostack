@@ -10,6 +10,14 @@
   <%= @stack.description %>
 </p>
 
+<h3>images</h3>
+ 
+  <% for image in @stack.stack_images %>
+    <%= h image_tag image.name, :class => 'google-image-show' %></li>
+  <% end %>
+ 
+
+
 
 
 <h3>ingredients</h3>

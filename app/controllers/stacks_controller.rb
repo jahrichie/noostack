@@ -47,19 +47,18 @@ class StacksController < ApplicationController
   end
 
   def get_images
-     _name           = params[:name] ? params[:name] : "failure"
-    _url            = "http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=#{_name.gsub(' ','%20')}"
-    _response       = Net::HTTP.get_response(URI.parse(_url))
-    _response_hash  = JSON.parse _response.body
-    structure       =  _response_hash.deep_symbolize_keys 
-    @stack_imgs      = structure[:responseData][:results].map { |r| r["url"]}
+     _name            = params[:name] ? params[:name] : "failure"
+    _url              = "http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=#{_name.gsub(' ','%20')}"
+    _response         = Net::HTTP.get_response(URI.parse(_url))
+    _response_hash    = JSON.parse _response.body
+    structure         =  _response_hash.deep_symbolize_keys 
+    @stack_imgs       = structure[:responseData][:results].map { |r| r["url"]}
 
     render json: {
       data: {
         images: @stack_imgs
       }
     }
-
   end
 
 
