@@ -17,16 +17,18 @@ gem 'slim'
 gem 'heroku'
 gem 'devise'
 gem 'jquery-validation-rails'
+gem 'zurb-foundation', '~> 2.2'
 
 group :production do
   gem 'pg'
+
 
 end
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'zurb-foundation', '~> 2.2'
+  
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
