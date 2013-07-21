@@ -12,7 +12,7 @@ table
       td= stack.name
       td= stack.description
       - _ingredients = stack.ingredients.map{|i| i[:name]}
-      td= _ingredients.present? ? _ingredients : "Blank"
+      td= _ingredients.present? ? _ingredients.to_sentence : "Blank"
       td= link_to 'Show', stack
       td= link_to 'Edit', edit_stack_path(stack)
       td= link_to 'Destroy', stack, method: :delete, confirm: 'Are you sure?' 

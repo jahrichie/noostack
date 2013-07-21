@@ -9,5 +9,6 @@ class Stack < ActiveRecord::Base
     :ingredients_attributes
 
   validates_presence_of :name, :description
+  
 
 end

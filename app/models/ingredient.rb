@@ -5,6 +5,7 @@ class Ingredient < ActiveRecord::Base
 
   BASE = ["Coffee","Tea", "THC"]
   attr_accessible :description, :name, :stack_id
-  
+   
+  # validates_uniqueness_of :name
   # validates_presence_of :name,:stack_id
 end

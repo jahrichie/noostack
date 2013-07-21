@@ -3,7 +3,7 @@
     li
       - if  user_signed_in? 
         a.current-user href="#" 
-          = current_user.email
+          = current_user.username
         = link_to "X", destroy_user_session_path, method: 'delete', confirm: 'Are you sure?'
 
 
