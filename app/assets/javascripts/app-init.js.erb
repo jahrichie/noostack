@@ -9,17 +9,6 @@ $(function() {
          lineWidth: "10"
     });
 
-   
-  
-  <% 
-    _all        =   Ingredient.all
-    _all_names  =   _all.map { |a| a.name }  
-  %>
-   var availableTags = <%= _all_names  %>;
-   $( ".ingredients input" ).autocomplete({
-      source: availableTags
-   });
-
 
 $("#stack_name").focusout(function() {
   var name = $(this).val();
@@ -58,7 +47,7 @@ $("#stack_name").focusout(function() {
 
 function add_fields(link, association, content) {
   var new_id = new Date().getTime(),
-      input  = jQuery('<div class="cf" /><input class="" name="stack[ingredients_attributes]['+new_id+'][name]"><input class="Percentage" id="stack_ingredients_attributes_'+new_id+'_percentage" name="stack[ingredients_attributes]['+new_id+'][percentage]" placeholder="Percentage" size="30" type="text" value="50"><br />');
+      input  = jQuery('<div class="cf" /><input class="" name="stack[ingredients_attributes]['+new_id+'][name]"><input class="Percentage" id="stack_ingredients_attributes_'+new_id+'_percentage" name="stack[ingredients_attributes]['+new_id+'][percentage]" placeholder="Percentage" size="30" type="text" value="50"></div><br />');
 
   if ($('#stack_ingredients_attributes_0_name').length > 0 ) {
     $("#stack_ingredients_attributes_1_name").after(input);
@@ -68,3 +57,16 @@ function add_fields(link, association, content) {
 
 
 }
+
+
+$(function autocompleter () {
+  <% 
+    _all        =   Ingredient.all
+    _all_names  =   _all.map { |a| a.name }  
+  %>
+   var availableTags = <%= _all_names  %>;
+   $( ".ingredients input" ).autocomplete({
+      source: availableTags
+   });
+});//autocompleter
+

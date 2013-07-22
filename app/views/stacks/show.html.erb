@@ -1,14 +1,12 @@
 <p id="notice"><%= notice %></p>
-
+<h1><%= @stack.name %></h1>
 
 
 <div class="this-stack">
   <% for ingredient in @stack.ingredients %> 
-    <div class="stack" style="height:<%= ingredient.percentage %>%;background:<%= background_color_helpa.sample %>"><%= ingredient.name %></div>
+    <div class="stack" style="height:<%= ingredient.percentage %>%;background:<%= background_color_helpa.sample %>"><%= ingredient.name  %></div>
   <% end  %>
 </div>
-
-<h1><%= @stack.name %></h1>
 
 
 
@@ -25,7 +23,6 @@
   </li>
   <div class="label"><%= h ingredient.name %></div>
   <% end %>
-  
 </ol>
  
 

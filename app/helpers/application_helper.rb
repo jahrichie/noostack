@@ -2,7 +2,7 @@ module ApplicationHelper
 
 
   def background_color_helpa
-    background_color = ["#EEEA1D","#07A984","#CB5E7B","#00CCFC","#CC99FE","#FF99CB","C2F75E","#000","#404040"]
+    background_color = ["#EEEA1D","#07A984","#CB5E7B","#00CCFC","#CC99FE","#FF99CB","C2F75E","#000","#404040","#FA9B88"]
   end
 
   def user_with_icon(current_user)
