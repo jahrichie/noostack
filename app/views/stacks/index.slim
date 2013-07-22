@@ -14,7 +14,7 @@ table
   - @stacks.each do |stack|
     tr
       - _images = stack.stack_images.map{|i| i[:url]}
-      td.thumb= link_to image_tag(_images.sample), stack
+      td.thumb  = link_to image_tag(_images.sample), stack, :style => "border: 5px double #{background_color_helpa.sample};display:block;"
       td= User.find(stack.user_id).username
       td= stack.name
       td= stack.description
