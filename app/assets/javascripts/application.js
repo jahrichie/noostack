@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require foundation
 //= require jquery.easy-pie-chart
+//= require jquery.validate
 //= require app-init

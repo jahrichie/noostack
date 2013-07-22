@@ -12,10 +12,10 @@
   <% end %>
 
   <div class="field cf">
-    <%= f.label :name %> <%= f.text_field :name %>
+    <%= f.label :name %> <%= f.text_field :name, :class => "required" %>
   </div>
   <div class="field cf">
-    <%= f.label :description %><%= f.text_area :description %>
+    <%= f.label :description %><%= f.text_area :description, :class => "required" %>
   </div>
 
 
@@ -38,8 +38,8 @@
 <div class="ingredients">  
   <%= f.fields_for :ingredients do |i| %>
    <div class="field cf">
-      <%= i.label :name, "Ingredient Name"  %><%= i.text_field :name, :rows => 3 %> 
-      <%= i.text_field :percentage,   :placeholder => 'Percentage',:class => 'Percentage' %><br />
+      <%= i.label :name, "Ingredient Name"  %><%= i.text_field :name, :rows => 3 , :class => "required"%> 
+      <%= i.text_field :percentage,   :placeholder => 'Percentage',:class => 'Percentage required' %><br />
    </div>
   <% end %>
 </div>

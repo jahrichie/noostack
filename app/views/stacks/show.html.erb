@@ -4,7 +4,7 @@
 
 <div class="this-stack">
   <% for ingredient in @stack.ingredients %> 
-    <div class="stack" style="height:<%= ingredient.percentage %>%;background:<%= background_color_helpa.sample %>"><%= ingredient.name  %></div>
+    <div class="stack" style="font-size:<%= ingredient.percentage %>%;height:<%= ingredient.percentage %>%;background:<%= background_color_helpa.sample %>"><%= ingredient.name  %></div>
   <% end  %>
 </div>
 
