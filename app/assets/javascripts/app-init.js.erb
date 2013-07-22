@@ -11,6 +11,7 @@ $(function() {
 
 
 $("#stack_name").focusout(function() {
+  $('#stack-images img').remove();
   var name = $(this).val();
   // alert(name);
 
@@ -21,12 +22,10 @@ $("#stack_name").focusout(function() {
       $('<h1>Images: '+name +'</h1>').appendTo('#stack-images');
       $.each(images, function(index, data) {
           // $("#stack-images img").remove();
-
           $('<img/>').attr('src', data).appendTo('#stack-images');
           var new_id = new Date().getTime();
           
           $('<input id="stack_stack_images_attributes_'+new_id+'_name" name="stack[stack_images_attributes]['+new_id+'][name]"  type="hidden">').attr('value', data).appendTo('#stack-images');
-
           $('<input class="by-rich" id="stack_stack_images_attributes_'+new_id+'_url" name="stack[stack_images_attributes]['+new_id+'][url]" type="hidden" >').attr('value', data).appendTo('#stack-images');
 
       });
