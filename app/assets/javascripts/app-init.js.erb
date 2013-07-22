@@ -4,8 +4,9 @@ $(function() {
    $('.chart').easyPieChart({
          animate: 2000,
          barColor: "black",
-         trackColor: "red",
-         lineWidth: "5"
+         trackColor: "EEEA1D",
+         scaleColor: "black",
+         lineWidth: "10"
     });
 
    
@@ -57,7 +58,7 @@ $("#stack_name").focusout(function() {
 
 function add_fields(link, association, content) {
   var new_id = new Date().getTime(),
-      input  = jQuery('<div class="cf" /><label for="stack_ingredients_attributes_'+new_id+'_name">Ingredient Name</label><input class="" name="stack[ingredients_attributes]['+new_id+'][name]"><br />');
+      input  = jQuery('<div class="cf" /><input class="" name="stack[ingredients_attributes]['+new_id+'][name]"><input class="Percentage" id="stack_ingredients_attributes_'+new_id+'_percentage" name="stack[ingredients_attributes]['+new_id+'][percentage]" placeholder="Percentage" size="30" type="text" value="50"><br />');
 
   if ($('#stack_ingredients_attributes_0_name').length > 0 ) {
     $("#stack_ingredients_attributes_1_name").after(input);
