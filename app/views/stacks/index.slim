@@ -14,14 +14,18 @@ table
   - @stacks.each do |stack|
     tr
       - _images = stack.stack_images.map{|i| i[:url]}
-      td.thumb  = link_to image_tag(_images.sample), stack, :style => "border: 5px double #{background_color_helpa.sample};display:inline-block;"
+      td.thumb  
+        = link_to image_tag(_images.sample), stack, :style => "border: 5px solid #{background_color_helpa.sample};display:inline-block;"
+        span style="background:#{background_color_helpa.sample};" = StackImage.find_all_by_stack_id(stack).size
       td= User.find(stack.user_id).username
       td= stack.name
       td= stack.description
       - _ingredients = stack.ingredients.map{|i| i[:name]}
       td.ingredients-yo  
         - _ingredients.each do |i| 
-          span.ingredient-tag style="width:#{Ingredient.find_by_name(i).percentage}%;background:#{background_color_helpa.sample};" = i
+          - _p = Ingredient.find_by_name(i).percentage
+          - _p = number_to_percentage(_p, precision: 0)
+          span.ingredient-tag style="width:#{_p}%;background:#{background_color_helpa.sample};" = _p
       / _ingredients.present? ? _ingredients : "Blank"
       - if user_signed_in?  && stack.user_id == current_user.id
         td= link_to 'Show', stack

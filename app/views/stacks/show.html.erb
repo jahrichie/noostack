@@ -1,10 +1,17 @@
 <p id="notice"><%= notice %></p>
+
+ <% if user_signed_in?  && current_user.id == @stack.user_id %> 
+  <div class="button edit-this-stack cf">
+    <%= link_to 'Edit', edit_stack_path(@stack) %> 
+  </div>
+ <% end  %>
+
 <h1><%= @stack.name %></h1>
 
 <h3>ingredients</h3>
 <div class="this-stack">
   <% for ingredient in @stack.ingredients %> 
-    <div class="stack" style="font-size:<%= ingredient.percentage %>%;height:<%= ingredient.percentage %>%;background:<%= background_color_helpa.sample %>"><%= ingredient.name  %></div>
+    <div class="stack" style="font-size:<%= ingredient.percentage/10 %>em;height:<%= ingredient.percentage %>%;background:<%= background_color_helpa.sample %>"><%= "#{ingredient.name} <span style='font-size: 12px;position: absolute;margin-left: 30px;color: #000;font-weight: bold;'>(#{number_to_percentage(ingredient.percentage,precision: 0)})</span>".html_safe %></div>
   <% end  %>
 </div>
 
@@ -13,40 +20,31 @@
 
 
 
- 
+<div class="ingredient-dials-wrapper cf">  
   <% for ingredient in @stack.ingredients %>
- 
-  
     <span class="chart" data-percent="<%=  ingredient.percentage %>">
       <%=  ingredient.percentage %>%
     </span>
    
   <div class="label"><%= h ingredient.name %></div>
   <% end %>
+</div>
  
- 
 
 
 
-<p>
+<p style="clear:both">
+  <h3>Description</h3>
   <%= @stack.description %>
 </p>
 
 <h3>images</h3>
- 
-  <% for image in @stack.stack_images %>
-    <div class="stack-images-wrapper">
-      <%= h image_tag image.name, :class => 'google-image-show' %></li>
-      <%= link_to 'Destroy', image, class: 'image-destroyer',method: :delete, data: { confirm: 'Are you sure?' } %>
-    </div>
-  <% end %>
- 
-
-
-<div class="cf">
-
-  <%= link_to 'Edit', edit_stack_path(@stack) %> |
-  <%= link_to 'Back', stacks_path %>
-
-</div>
+ <div class="stack-all-images-wrapper">
+   <% for image in @stack.stack_images %>
+     <div class="stack-images-wrapper">
+       <%= h image_tag image.name, :class => 'google-image-show' %></li>
+       <%= link_to 'Destroy', image, class: 'image-destroyer',method: :delete, data: { confirm: 'Are you sure?' } %>
+     </div>
+   <% end %>
+  </div>
 

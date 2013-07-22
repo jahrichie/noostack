@@ -181,16 +181,23 @@ a {
 
 td.thumb {
   max-width: 50px;
+  position: relative;
+}
+td.thumb span {
+  position: absolute;
+  top: 9px;
+  left: 10px;
+  color: white;
 }
 
 .stack-images-wrapper {
   position: relative;
-  max-width: 400px;
   height: auto;
-  width: 400px;
+  width: 200px;
   display: block;
   border: 1px solid black;
   margin: 20px;
+  float: left;
 }
 
 div.label {
@@ -206,7 +213,8 @@ div.label {
   padding: 4px 8px;
 }
 .image-destroyer:hover {
-  color: black;
+  color: white;
+  background: black;
 }
 
 
@@ -245,8 +253,61 @@ label.error {
 .ingredient-tag {
   display: block !important;
   margin:3px;
-  color: black;
+  color: white;
+  font-weight: bold;
   padding: 4px;
 
 }
 
+.chart {
+  margin-left: 160px;
+}
+
+.this-stack .stack:hover  {
+  zoom: 1;
+  filter: alpha(opacity=80);
+  opacity: 0.8;
+
+}
+
+h1 {
+  font-weight:300;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.smaller-font {
+  font-size: 1em;
+}
+
+.ingredient-dials-wrapper {
+  text-align: center;
+  margin: 0 0 110px -248px; 
+}
+
+.edit-this-stack  {
+  background: yellow;
+  color: black;
+  float: right;
+
+}
+
+.edit-this-stack a {
+  color:  black;
+}
+.edit-this-stack:hover {
+  background: black;
+  color: white !important;  
+} 
+
+.edit-this-stack:hover a {
+  color: white;
+}
+
+.stack-all-images-wrapper {
+  margin-bottom: 100px; 
+}

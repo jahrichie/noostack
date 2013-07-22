@@ -1,13 +1,31 @@
-/ = render "/stacks/form"
+h1 Listing stacks
 
-table border="1"
-  th Name
-  th Description
-  th ingredients
-  - @stacks_by_user.each do |user|
+
+table
+  tr
+    th 
+    th Name
+    th Description
+    th Ingredients
+    th
+    th
+    th
+  - @stacks_by_user.each do |stack|
     tr
-      td = user.name
-      td = user.description
-      td = user.ingredients.map {|i|i.name}.to_sentence
-- if @stacks_by_user.empty?
-  h1 No items by this user.
+      - _images = stack.stack_images.map{|i| i[:url]}
+      td.thumb  = link_to image_tag(_images.sample), stack, :style => "border: 5px solid #{background_color_helpa.sample};display:inline-block;"
+      td= stack.name
+      td= stack.description
+      - _ingredients = stack.ingredients.map{|i| i[:name]}
+      td.ingredients-yo  
+        - _ingredients.each do |i| 
+          - _p = Ingredient.find_by_name(i).percentage
+          - _p = number_to_percentage(_p, precision: 0)
+          span.ingredient-tag style="width:#{_p}%;background:#{background_color_helpa.sample};" = _p
+      / _ingredients.present? ? _ingredients : "Blank"
+      - if user_signed_in?  && stack.user_id == current_user.id
+        td= link_to 'Show', stack
+        td= link_to 'Edit', edit_stack_path(stack)
+        td= link_to 'Destroy', stack, method: :delete, confirm: 'Are you sure?' 
+      /! users.map{|u| u[:email]}
+br
