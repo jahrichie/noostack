@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <h1><%= @stack.name %></h1>
 
-
+<h3>ingredients</h3>
 <div class="this-stack">
   <% for ingredient in @stack.ingredients %> 
     <div class="stack" style="font-size:<%= ingredient.percentage %>%;height:<%= ingredient.percentage %>%;background:<%= background_color_helpa.sample %>"><%= ingredient.name  %></div>
@@ -11,19 +11,19 @@
 
 
 
-<h3>ingredients</h3>
 
-<ol id="ingredients">
+
+ 
   <% for ingredient in @stack.ingredients %>
  
-  <li>
+  
     <span class="chart" data-percent="<%=  ingredient.percentage %>">
       <%=  ingredient.percentage %>%
     </span>
-  </li>
+   
   <div class="label"><%= h ingredient.name %></div>
   <% end %>
-</ol>
+ 
  
 
 
@@ -43,7 +43,10 @@
  
 
 
+<div class="cf">
 
+  <%= link_to 'Edit', edit_stack_path(@stack) %> |
+  <%= link_to 'Back', stacks_path %>
 
-<%= link_to 'Edit', edit_stack_path(@stack) %> |
-<%= link_to 'Back', stacks_path %>
+</div>
+

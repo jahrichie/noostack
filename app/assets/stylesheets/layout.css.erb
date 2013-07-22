@@ -35,6 +35,7 @@ sodigit.al
 
 body {
  background:#F3F3F3;
+ margin-bottom: 100px;
 }
 
 table {width: 100%;}
@@ -169,7 +170,7 @@ a {
 
 
 .google-image,.google-image-show {
-  max-width: 400px;
+  width: 400px;
   height: auto;
 }
 
@@ -184,8 +185,12 @@ td.thumb {
 
 .stack-images-wrapper {
   position: relative;
-  width: auto;
-  display: inline;
+  max-width: 400px;
+  height: auto;
+  width: 400px;
+  display: block;
+  border: 1px solid black;
+  margin: 20px;
 }
 
 div.label {
@@ -244,3 +249,4 @@ label.error {
   padding: 4px;
 
 }
+
