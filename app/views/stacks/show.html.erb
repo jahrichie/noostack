@@ -5,10 +5,25 @@
 
 
 <h1><%= @stack.name %></h1>
+
+
+
+
+<h3>ingredients</h3>
+
+<ol id="ingredients">
+  <% for ingredient in @stack.ingredients %>
+ 
+  <li><span class="chart" data-percent="<%=  ingredient.percentage %>"><%=  ingredient.percentage %>%</span></li>
+  <div class="label"><%= h ingredient.name %></div>
+  <% end %>
+  
+</ol>
+ 
+
  
 
 <p>
-  <b>Description:</b>
   <%= @stack.description %>
 </p>
 
@@ -22,19 +37,6 @@
   <% end %>
  
 
-
-
-
-<h3>ingredients</h3>
-
-<ol id="ingredients">
-  <% for ingredient in @stack.ingredients %>
- 
-  <li><span class="chart" data-percent="<%=  ingredient.percentage %>"><%=  ingredient.percentage %>%</span></li>
-
-  <% end %>
-  <div class="label"><%= h ingredient.name %></div>
-</ol>
 
 
 
