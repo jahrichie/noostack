@@ -15,4 +15,5 @@
 //= require foundation
 //= require jquery.easy-pie-chart
 //= require jquery.validate
+//= require jquery.transit.min
 //= require app-init

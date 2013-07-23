@@ -1,11 +1,32 @@
 $(function() {
-  // alert("asd")
- // 
-// $("label.error").prev().css('border','1px solid red');
 
-// $("#new_stack").validate({
 
-// });
+  $(".stack").transition({ 
+      opacity:  1,
+      width: '100%',
+      easing: 'snap',
+      duration: 1200 
+  });
+
+
+// #################
+// PLUGIN INITS
+// #################
+
+  var ingTag = $(".ingredient-tag");
+  // var percentage = ingTag.data().percentage
+
+  ingTag.each(function() {
+    // alert($(".ingredient-tag").data("percentage"))
+    // console.log($(this).data().percentage)
+    $(this).delay(500).transition({ 
+        opacity:  1,
+        width: $(this).data().percentage,
+        easing: 'snap',
+        duration: 1200 
+     });
+  });
+
 
 
    $('.chart').easyPieChart({
@@ -53,10 +74,14 @@ $("#stack_name").focusout(function() {
 
 function add_fields(link, association, content) {
   var new_id = new Date().getTime(),
-      input  = jQuery('<label for="stack_ingredients_attributes_'+new_id+'_name">Ingredient Name</label><div class="cf" /><input class="" name="stack[ingredients_attributes]['+new_id+'][name]"><input class="Percentage" id="stack_ingredients_attributes_'+new_id+'_percentage" name="stack[ingredients_attributes]['+new_id+'][percentage]" placeholder="Percentage" size="30" type="text" value="50"></div><br />');
+      // input  = jQuery('<label for="stack_ingredients_attributes_'+new_id+'_name">Ingredient Name</label><div class="cf" /><input class="" name="stack[ingredients_attributes]['+new_id+'][name]"><input class="Percentage" id="stack_ingredients_attributes_'+new_id+'_percentage" name="stack[ingredients_attributes]['+new_id+'][percentage]" placeholder="Percentage" size="30" type="text" value="50"></div><br />');
+         input  = jQuery('<table><td><input class="" name="stack[ingredients_attributes]['+new_id+'][name]"></td><td width="50" "><input class="Percentage" id="stack_ingredients_attributes_'+new_id+'_percentage" name="stack[ingredients_attributes]['+new_id+'][percentage]" placeholder="Percentage" size="30" type="text"></td></table>');
+
+
+
 
     if ($('#stack_ingredients_attributes_0_name').length > 0 ) {
-      $("#stack_ingredients_attributes_1_name").after(input);
+      $("#ingredients").eq(-1).after(input);
     } else {
       $(".ingredients-header").after(input);
     }
@@ -64,11 +89,11 @@ function add_fields(link, association, content) {
 
 function add_goals(link, association, content) {
   var new_id = new Date().getTime(),
-      input  = jQuery('<label for="stack_goals_attributes_0_name">Goal Description</label><input class="required" id="stack_goals_attributes_'+ new_id +'_description" name="stack[goals_attributes]['+ new_id +'][description]" rows="3" size="30" type="text">');
+      input  = jQuery('<input class="required" id="stack_goals_attributes_'+ new_id +'_description" name="stack[goals_attributes]['+ new_id +'][description]" rows="3" size="30" type="text">');
 
    
       if ($('#stack_goals_attributes_0_description').length > 0 ) {
-        alert("el exists");
+        // alert("el exists");
         $(".goals-header").after(input);
 
       } else {
