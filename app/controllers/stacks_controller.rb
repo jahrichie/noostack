@@ -40,6 +40,8 @@ class StacksController < ApplicationController
     @stack = Stack.new 
     2.times {@stack.ingredients.build}
     1.times {@stack.stack_images.build}
+    1.times {@stack.goals.build}
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @stack }

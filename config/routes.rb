@@ -1,5 +1,8 @@
 Noo::Application.routes.draw do
 
+  resources :goals
+
+
   resources :stack_images
 
 

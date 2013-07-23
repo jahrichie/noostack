@@ -6,7 +6,7 @@ table
     th 
     th Author
     th Name
-    th Description
+    th Goals
     th Ingredients
     th
     th
@@ -19,7 +19,7 @@ table
         span style="background:#{background_color_helpa.sample};" = StackImage.find_all_by_stack_id(stack).size
       td= User.find(stack.user_id).username
       td= stack.name
-      td= stack.description
+      td= stack.goals.map{|g| g.description}.to_sentence if stack.goals 
       - _ingredients = stack.ingredients.map{|i| i[:name]}
       td.ingredients-yo  
         - _ingredients.each do |i| 

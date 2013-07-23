@@ -1,3 +1,5 @@
+
+
 <%= form_for(@stack) do |f| %>
   <% if @stack.errors.any? %>
     <div id="error_explanation">
@@ -45,6 +47,16 @@
 </div>
 
   <p class="add-link"><%= link_to_add_fields "<i class='icon-plus'></i> Add Ingedient".html_safe, f, :ingredients %></p>
+
+
+
+<div class="goals-inputs">  
+  <h1 class="goals-header">Stack Goals</h1>  
+  <%= f.fields_for :goals do |i| %>
+     <%= i.label :name, "Goal Description"  %><%= i.text_field :description, :rows => 3 , :class => "required"%> 
+  <% end %>
+</div>
+  <p class="add-link"><%= link_to_add_goals "<i class='icon-plus'></i> Add Goals".html_safe, f, :goals %></p>
 
   <!-- foo -->
 

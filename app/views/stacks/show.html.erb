@@ -7,6 +7,13 @@
  <% end  %>
 
 <h1><%= @stack.name %></h1>
+<h3>Goals</h3>
+<ol id="goals">
+  <% for goal in @stack.goals %> 
+    <li><%= goal.description %></li>
+  <% end  %>
+</ol>
+
 
 <h3>ingredients</h3>
 <div class="this-stack">
@@ -14,11 +21,6 @@
     <div class="stack" style="font-size:<%= ingredient.percentage/10 %>em;height:<%= ingredient.percentage %>%;background:<%= background_color_helpa.sample %>"><%= "#{ingredient.name} <span style='font-size: 12px;position: absolute;margin-left: 30px;color: #000;font-weight: bold;'>(#{number_to_percentage(ingredient.percentage,precision: 0)})</span>".html_safe %></div>
   <% end  %>
 </div>
-
-
-
-
-
 
 <div class="ingredient-dials-wrapper cf">  
   <% for ingredient in @stack.ingredients %>
@@ -38,13 +40,15 @@
   <%= @stack.description %>
 </p>
 
-<h3>images</h3>
- <div class="stack-all-images-wrapper">
-   <% for image in @stack.stack_images %>
-     <div class="stack-images-wrapper">
-       <%= h image_tag image.name, :class => 'google-image-show' %></li>
-       <%= link_to 'Destroy', image, class: 'image-destroyer',method: :delete, data: { confirm: 'Are you sure?' } %>
-     </div>
-   <% end %>
-  </div>
 
+<% if  @stack.stack_images.count > 0  %>
+  <h3>images</h3>
+   <div class="stack-all-images-wrapper">
+     <% for image in @stack.stack_images %>
+       <div class="stack-images-wrapper">
+         <%= h image_tag image.name, :class => 'google-image-show' %></li>
+         <%= link_to 'Destroy', image, class: 'image-destroyer',method: :delete, data: { confirm: 'Are you sure?' } %>
+       </div>
+     <% end %>
+    </div>
+<% end %>
