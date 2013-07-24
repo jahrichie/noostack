@@ -1,0 +1,337 @@
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+
+/*
+MYSTACK
+by rich oreilly
+so digital design and dev
+sodigit.al
+*/
+
+body {
+ background:#F3F3F3;
+ margin-bottom: 100px;
+}
+
+table {width: 100%;}
+
+th {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#view-wrapper {
+  width: 1000px;
+  margin: 0 auto;
+}
+.full-width-top {
+  background: #000;
+  height: 40px;
+  border-bottom: 80px solid white;
+    -webkit-box-shadow: 0px 0px 8px 2px #CCC;
+       -moz-box-shadow: 0px 0px 8px 2px #CCC;
+            box-shadow: 0px 0px 8px 2px #CCC;
+}
+
+.header-nav {
+  margin-top: -81px;
+  display: block;
+  color: #FFF;
+  width: 100%; 
+  height:38px;
+  padding:25px 0;
+  background:url(<%= asset_path 'layout/logo.png' %>) 410px 10px no-repeat;
+  background-size: 50%;
+}
+
+.add-link a {
+  margin-left:230px;
+}
+
+.search {
+  float:right;
+  margin-right:20px;
+ 
+ 
+}
+
+.search input {
+  border-radius: 4px;
+  border:0;
+  height: 30px;
+  width:180px;
+  margin-top: 4px;   
+  text-indent: 10px; 
+}
+
+
+.make-or-search li a {
+  display: block;
+  float: left;
+  margin-right: 10px;
+  background: #000;
+   /*background:url(<%= asset_path 'nav/tweed.png' %>) no-repeat;*/
+  color: white;
+  padding: 29px;
+  margin-top: -37px;
+  -webkit-transition:all 0.250s ease-in-out;
+  -moz-transition:all 0.250s ease-in-out;
+  -o-transition:all 0.250s ease-in-out;
+  transition:all 0.250s ease-in-out;
+  height: 25px;
+
+}
+
+.make-or-search li a:hover {
+  background: yellow;
+  color: black;
+}
+
+ul.make-or-search li {
+  display: block;
+}
+
+
+.field input,.field label {
+  float: left;
+  margin: 20px;
+}
+
+input {
+  width: 600px;
+  height: 50px;
+  padding: 5px;
+}
+
+#stack_description {
+  width: 850px;
+
+}
+a {
+  -webkit-transition:all 0.250s ease-in-out;
+  -moz-transition:all 0.250s ease-in-out;
+  -o-transition:all 0.250s ease-in-out;
+  transition:all 0.250s ease-in-out;
+}
+
+.field_with_errors input,.field_with_errors textarea {
+  border: 1px solid #CB5E7B;
+}
+
+#error_explanation {color: #CB5E7B}
+
+.login-register {
+  position: absolute;
+  top: 77px;
+  right:0;
+}
+
+.button {
+  margin-top: 50px;
+  background: #000;
+}
+
+.button:hover {
+  color: black;
+  background: yellow;
+}
+
+#login-register .icon-remove-circle {
+  font-size: 2em;
+}
+
+#stack_name {margin-left:31px;}
+
+
+.google-image,.google-image-show {
+  width: 400px;
+  height: auto;
+}
+
+#stack-images img {
+  max-width: 400px;
+  margin: 25px;
+}
+
+td.thumb {
+  max-width: 50px;
+  position: relative;
+}
+td.thumb span {
+  position: absolute;
+  top: 9px;
+  left: 10px;
+  color: white;
+}
+
+.stack-images-wrapper {
+  position: relative;
+  height: auto;
+  width: 200px;
+  display: block;
+  border: 1px solid black;
+  margin: 20px;
+  float: left;
+}
+
+div.label {
+  background: black;
+}
+
+.image-destroyer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background:#CB5E7B;
+  color: white;
+  padding: 4px 8px;
+}
+.image-destroyer:hover {
+  color: white;
+  background: black;
+}
+
+
+.Percentage {
+  width: 80px;
+}
+
+
+
+.this-stack {
+  width: 50%;
+  height: 300px;
+  border: 1px solid #CCC;
+  -webkit-box-shadow: 0px 0px 8px 2px #CCC;
+  -moz-box-shadow: 0px 0px 8px 2px #CCC;
+  box-shadow: 0px 0px 8px 2px #CCC;
+
+}
+
+.this-stack .stack {
+  background: black;
+  border-bottom: 1px solid white;  
+  color: white;
+  line-height: 272%;
+  text-align: center;
+  font-size: 2em;
+
+}
+
+label.error {
+  color: red;
+  font-weight: bold;
+
+}
+
+.ingredient-tag {
+  opacity: 0;
+  /*display: inline-block !important;*/
+  margin:3px;
+  color: white;
+  font-weight: bold;
+  padding: 4px;
+  font-size: 8px;
+}
+
+.chart {
+  margin-left: 160px;
+}
+
+.this-stack .stack:hover  {
+  zoom: 1;
+  filter: alpha(opacity=80);
+  opacity: 0.8;
+
+}
+
+h1 {
+  font-weight:300;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.smaller-font {
+  font-size: 1em;
+}
+
+.ingredient-dials-wrapper {
+width: 550px;
+text-align: center;
+
+float: right;
+position: absolute;
+top: 350px;
+left:44%;
+}
+
+
+.edit-this-stack  {
+  background: yellow;
+  color: black;
+  float: right;
+
+}
+
+.edit-this-stack a {
+  color:  black;
+}
+.edit-this-stack:hover {
+  background: black;
+  color: white !important;  
+} 
+
+.edit-this-stack:hover a {
+  color: white;
+}
+
+.stack-all-images-wrapper {
+  margin-bottom: 100px; 
+}
+
+
+ol#goals li {
+  text-transform: uppercase;
+  display: inline;
+  background: black;
+  color: white;
+  padding:5px;
+  font-size: 2em;
+  font-weight: 100;
+  margin: 5px;
+}
+
+ 
+
+.has-tip:hover {
+  cursor: pointer;
+}

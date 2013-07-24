@@ -20,9 +20,10 @@ $(function() {
   ingTag.each(function() {
     // alert($(".ingredient-tag").data("percentage"))
     // console.log($(this).data().percentage)
-    $(this).delay(500).transition({ 
+    $(this).delay(100).transition({ 
         opacity:  1,
         width: $(this).data().percentage,
+        // height : "12px",
         easing: 'snap',
         duration: 1200 
      });
