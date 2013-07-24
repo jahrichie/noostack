@@ -18,7 +18,7 @@
 <h3>ingredients</h3>
 <div class="this-stack">
   <% for ingredient in @stack.ingredients %> 
-    <div class="stack" style="font-size:<%= ingredient.percentage/10 %>em;height:<%= ingredient.percentage %>%;background:<%= background_color_helpa.sample %>"><%= "#{ingredient.name} <span style='font-size: 12px;position: absolute;margin-left: 30px;color: #000;font-weight: bold;'>(#{number_to_percentage(ingredient.percentage,precision: 0)})</span>".html_safe %></div>
+    <%= stack_representation(ingredient).html_safe %>
   <% end  %>
 </div>
 

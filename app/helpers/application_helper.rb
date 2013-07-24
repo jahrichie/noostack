@@ -1,5 +1,10 @@
 module ApplicationHelper
 
+  def stack_representation(ingredient)
+      <<-LINK
+        <div class="stack" style="font-size:#{ingredient.percentage/10 }em;height: #{ingredient.percentage}%;background: #{background_color_helpa.sample}">  #{ingredient.name} <span style='font-size: 12px;position: absolute;margin-left: 30px;color: #000;font-weight: bold;'>(#{number_to_percentage(ingredient.percentage,precision: 0)})</span></div>
+        LINK
+  end
 
   def background_color_helpa
     background_color = ["#EEEA1D","#07A984","#CB5E7B","#00CCFC","#CC99FE","#FF99CB","C2F75E","#000","#404040","#FA9B88"]
