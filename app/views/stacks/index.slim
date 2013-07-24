@@ -1,5 +1,5 @@
 h1 Listing stacks
-
+d data-tooltip="data-tooltip=" class="has-tip" title="Tooltips are awesome, you should totally use them!"> extended information
 
 table
   tr
@@ -8,7 +8,7 @@ table
     th Name
     th Goals
     th Ingredients
-    th
+    th 
     th
     th
   - @stacks.each do |stack|
@@ -16,7 +16,8 @@ table
       - _images = stack.stack_images.map{|i| i[:url]}
       td.thumb  
         = link_to image_tag(_images.sample), stack, :style => "border: 5px solid #000;display:inline-block;"
-        span style="background:#000;" = StackImage.find_all_by_stack_id(stack).size
+        
+      / span style="background:#000;" = StackImage.find_all_by_stack_id(stack).size
       td= User.find(stack.user_id).username
       td= stack.name
       td= stack.goals.map{|g| g.description}.to_sentence if stack.goals 
@@ -25,7 +26,20 @@ table
         - _ingredients.each do |i| 
           - _p = Ingredient.find_by_name(i).percentage
           - _p = number_to_percentage(_p, precision: 0)
-          span.ingredient-tag data-percentage="#{_p}" style="background:#{background_color_helpa.sample};" = _p
+
+
+
+          div.has-tip.ingredient-tag data-tooltip="data-tooltip" title="#{i}" data-percentage="#{_p}" style="background:#{background_color_helpa.sample};" = _p
+          
+
+          / span data-tooltip="data-tooltip=" class="has-tip"  data-percentage="#{_p}"  title="#{i}"  asdasd
+
+
+
+
+
+
+
       / _ingredients.present? ? _ingredients : "Blank"
       - if user_signed_in?  && stack.user_id == current_user.id
         td= link_to 'Show', stack
@@ -33,3 +47,4 @@ table
         td= link_to 'Destroy', stack, method: :delete, confirm: 'Are you sure?' 
       /! users.map{|u| u[:email]}
 br
+
