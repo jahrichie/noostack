@@ -12,10 +12,10 @@
   <% end %>
 
   <div class="field cf">
-    <%= f.label :name %> <%= f.text_field :name, :class => "required" %>
+    <%= f.text_field :name, :class => "required", placeholder: 'Stack Name...' %>
   </div>
   <div class="field cf">
-    <%= f.label :description %><%= f.text_area :description, :class => "required" %>
+    <%= f.text_area :description, :class => "required", placeholder: 'Stack Description...' %>
   </div>
 
 
@@ -60,7 +60,7 @@
 <div class="goals-inputs">  
   <h1 class="goals-header">Stack Goals</h1>  
   <%= f.fields_for :goals do |i| %>
-     <%= i.text_field :description, :rows => 3 , :placeholder => 'Goal Description', :class => "required"%> 
+     <%= i.text_field :description, :rows => 3 , :placeholder => 'Goal Description', :class => "stack-description required"%> 
   <% end %>
 </div>
   <p class="add-link"><%= link_to_add_goals "<i class='icon-plus'></i> Add Goals".html_safe, f, :goals %></p>
