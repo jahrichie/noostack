@@ -89,17 +89,6 @@ task :cleanup, :except => { :no_release => true } do
   CMD
 end
 
-namespace :bundle do
-
-  desc "run bundle install and ensure all gem requirements are met"
-  task :install do
-    run "cd #{current_path} && bundle install  --without=test --no-update-sources"
-  end
-
-end
-before "deploy:restart", "bundle:install"
-
-
 # We need to ensure that rubber:config runs before asset precompilation in Rails, as Rails tries to boot the environment,
 # which means needing to have DB access.  However, if rubber:config hasn't run yet, then the DB config will not have
 # been generated yet.  Rails will fail to boot, asset precompilation will fail to complete, and the deploy will abort.
