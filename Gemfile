@@ -19,7 +19,8 @@ gem 'devise'
 gem 'jquery-validation-rails'
 gem 'zurb-foundation', '~> 4.0.0'
 gem 'acts_as_votable', '~> 0.5.0'
-gem 'gelf'
+
+
 
 group :production do
   gem 'pg'
@@ -55,5 +56,15 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug'
 
+
+
+#DEPLOYING
 gem 'rubber'
 gem 'therubyracer', :platforms => :ruby
+gem 'gelf'
+gem 'open4'
+gem 'gelf'
+gem 'graylog2_exceptions', :git => 'git://github.com/wr0ngway/graylog2_exceptions.git'
+gem 'graylog2-resque'
+
+
