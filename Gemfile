@@ -19,11 +19,10 @@ gem 'devise'
 gem 'jquery-validation-rails'
 gem 'zurb-foundation', '~> 4.0.0'
 gem 'acts_as_votable', '~> 0.5.0'
+gem 'gelf'
 
 group :production do
   gem 'pg'
-
-
 end
 
 # Gems used only for assets and not required
