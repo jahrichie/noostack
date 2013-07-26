@@ -17,7 +17,8 @@ gem 'slim'
 gem 'heroku'
 gem 'devise'
 gem 'jquery-validation-rails'
-gem 'zurb-foundation', '~> 2.2'
+gem 'zurb-foundation', '~> 4.0.0'
+gem 'acts_as_votable', '~> 0.5.0'
 
 group :production do
   gem 'pg'
@@ -33,7 +34,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  
 
   gem 'uglifier', '>= 1.0.3'
 end
@@ -54,3 +55,6 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug'
+
+gem 'rubber'
+gem 'therubyracer', :platforms => :ruby
