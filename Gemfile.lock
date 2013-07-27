@@ -112,7 +112,6 @@ GEM
     mime-types (1.23)
     mono_logger (1.1.0)
     multi_json (1.7.3)
-    mysql (2.9.1)
     mysql2 (0.3.13)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
@@ -234,7 +233,7 @@ DEPENDENCIES
   jquery-rails
   jquery-validation-rails
   json
-  mysql
+  mysql2
   open4
   rails (= 3.2.13)
   rubber

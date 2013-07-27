@@ -20,8 +20,9 @@ gem 'jquery-validation-rails'
 gem 'zurb-foundation', '~> 2.2'
 
 group :production do
-  gem 'mysql'
+  
   gem 'activerecord-mysql2-adapter'
+  gem 'mysql2'
 end
 
 # Gems used only for assets and not required
