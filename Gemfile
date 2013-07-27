@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '3.2.13'
 
@@ -50,7 +50,23 @@ gem 'jquery-rails'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug'
+
+
+
+
+#DEPLOYING
+gem 'rubber'
+gem 'therubyracer', :platforms => :ruby
+gem 'gelf'
+gem 'open4'
+gem 'gelf'
+gem 'graylog2_exceptions', :git => 'git://github.com/wr0ngway/graylog2_exceptions.git'
+gem 'graylog2-resque'
+
+
+
+
