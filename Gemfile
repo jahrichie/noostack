@@ -21,7 +21,7 @@ gem 'zurb-foundation', '~> 2.2'
 
 group :production do
   gem 'mysql'
-  # gem 'activerecord-mysql2-adapter'
+  gem 'activerecord-mysql2-adapter'
 end
 
 # Gems used only for assets and not required
