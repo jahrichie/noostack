@@ -1,20 +1,16 @@
 Noo::Application.routes.draw do
 
   resources :goals
-
-
   resources :stack_images
-
+  resources :stacks
+  resources :ingredients 
 
   devise_for :users do 
 
   end
 
-  resources :ingredients
-
-  resources :stacks do 
   
-  end
+  
 
  get 'users/:user' => 'stacks#by_user'
 

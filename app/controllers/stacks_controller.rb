@@ -4,6 +4,10 @@ require 'json'
 class StacksController < ApplicationController
   before_filter :authenticate_user!, :only => [:create, :new]
 
+  def hotness
+    @featured = Stack.featured
+  end
+  
   def by_user
    if params[:user].is_number? #find by users id or screen name
     # raise "int"

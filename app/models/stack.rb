@@ -11,12 +11,15 @@ class Stack < ActiveRecord::Base
   accepts_nested_attributes_for :goals, :reject_if => lambda { |a| a[:description].blank? }, :allow_destroy => true
 
 
-  attr_accessible :description, :name, :user_id,
+  attr_accessible :description, :name, :user_id, :featured,
     #mass
     :ingredients_attributes,:stack_images_attributes, :goals_attributes
 
   validates_presence_of :name, :description
   
+
+  #SCOPES
+  scope :featured, where(featured: true)
 
 end
 
