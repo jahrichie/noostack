@@ -47,15 +47,16 @@ th {
 
 #view-wrapper {
   width: 1000px;
-  margin: 0 auto;
+  margin: 50px auto;
 }
 .full-width-top {
   background: #000;
   height: 40px;
   border-bottom: 80px solid white;
-    -webkit-box-shadow: 0px 0px 8px 2px #CCC;
-       -moz-box-shadow: 0px 0px 8px 2px #CCC;
-            box-shadow: 0px 0px 8px 2px #CCC;
+  -webkit-box-shadow: 0px 0px 8px 2px #CCC;
+  -moz-box-shadow: 0px 0px 8px 2px #CCC;
+  box-shadow: 0px 0px 8px 2px #CCC;
+           
 }
 
 .header-nav {
@@ -63,7 +64,7 @@ th {
   display: block;
   color: #FFF;
   width: 100%; 
-  height:38px;
+  height:85px;
   padding:25px 0;
   background:url(<%= asset_path 'layout/logo.png' %>) 410px 10px no-repeat;
   background-size: 50%;
@@ -98,13 +99,13 @@ th {
    /*background:url(<%= asset_path 'nav/tweed.png' %>) no-repeat;*/
   color: white;
   padding: 29px;
-  margin-top: -37px;
+  margin-top: -25px;
   -webkit-transition:all 0.250s ease-in-out;
   -moz-transition:all 0.250s ease-in-out;
   -o-transition:all 0.250s ease-in-out;
   transition:all 0.250s ease-in-out;
-  height: 25px;
-
+  text-transform: uppercase;
+  font-weight: 100;
 }
 
 .make-or-search li a:hover {
@@ -129,9 +130,10 @@ input {
 }
 
 #stack_description {
-  width: 850px;
-
+  width: 100%;
+  height: 100px;
 }
+
 a {
   -webkit-transition:all 0.250s ease-in-out;
   -moz-transition:all 0.250s ease-in-out;
@@ -147,8 +149,8 @@ a {
 
 .login-register {
   position: absolute;
-  top: 77px;
-  right:0;
+  top: 24;
+  right: 0;
 }
 
 .button {
@@ -165,7 +167,7 @@ a {
   font-size: 2em;
 }
 
-#stack_name {margin-left:31px;}
+#stack_name {margin-left:0;}
 
 
 .google-image,.google-image-show {
@@ -197,6 +199,12 @@ td.thumb span {
   border: 1px solid black;
   margin: 20px;
   float: left;
+
+   text-transform:uppercase;
+   text-align: center;
+   line-height: 180px;
+   font-weight:100;
+
 }
 
 div.label {
@@ -224,8 +232,7 @@ div.label {
 
 
 .this-stack {
-  width: 50%;
-  height: 300px;
+  /*width: 50%;*/
   border: 1px solid #CCC;
   -webkit-box-shadow: 0px 0px 8px 2px #CCC;
   -moz-box-shadow: 0px 0px 8px 2px #CCC;
@@ -242,6 +249,25 @@ div.label {
   font-size: 2em;
 
 }
+
+
+.this-stack .stack-percentage {
+  font-size: 12px;
+  position: absolute;
+  margin-left: 30px;
+  color: #FFF;
+  font-weight: bold;
+
+  
+
+}
+
+
+.stack-representation {
+  text-transform:uppercase;text-align: center;line-height: 180px;font-weight:100 !important;
+}
+ 
+
 
 label.error {
   color: red;
@@ -340,3 +366,30 @@ ol#goals li {
 .has-tip {
   /*padding: */
 }
+
+a:hover {
+  color: black;
+} 
+
+ul.orbit-featured {
+  margin-top:50px;
+}
+
+ 
+.orbit-featured  {
+  height: 550px;
+}
+
+.orbit-container .orbit-slides-container > * .orbit-caption {
+  background: #FFF;
+  color: black
+}
+
+
+
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea {
+
+height: 5.3125em;
+
+}
+

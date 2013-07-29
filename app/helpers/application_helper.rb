@@ -1,14 +1,26 @@
 module ApplicationHelper
 
-  def stack_representation(ingredient)
-      <<-LINK
-        <div class="stack" style="font-size:#{ingredient.percentage/10 }em;height: #{ingredient.percentage}%;background: #{background_color_helpa.sample}">  #{ingredient.name} <span style='font-size: 12px;position: absolute;margin-left: 30px;color: #000;font-weight: bold;'>(#{number_to_percentage(ingredient.percentage,precision: 0)})</span></div>
-        LINK
+
+
+  # def background_color_helpa
+  #   background_color = ["#EEEA1D", "#07A984", "#CB5E7B", "#00CCFC", "#CC99FE", "#FF99CB", 
+  #                       "C2F75E", "#000", "#404040","#FA9B88"]
+  # end
+
+  def random_neons  
+   _top = AppStyle::BACKGROUND_AND_FONT.size
+    AppStyle::BACKGROUND_AND_FONT[[*1.._top].sample].first
   end
 
-  def background_color_helpa
-    background_color = ["#EEEA1D","#07A984","#CB5E7B","#00CCFC","#CC99FE","#FF99CB","C2F75E","#000","#404040","#FA9B88"]
+
+  def stack_representation(ingredient, top_range)
+    # array order: [background, font]
+    random_neons = AppStyle::BACKGROUND_AND_FONT[[*1..top_range].sample]
+    <<-LINK
+      <div class="stack stack-representation" style="font-size:#{ingredient.percentage/12 }em;height:#{ingredient.percentage}%;background: #{random_neons.first};color: #{random_neons.last}">  #{ingredient.name} <span class="stack-percentage">(#{number_to_percentage(ingredient.percentage,precision: 0)})</span></div>
+      LINK
   end
+
 
   def user_with_icon(current_user)
     link_to "<i class='icon-user'></i>".html_safe + " " + truncate((current_user.username), :length => 40,:omission => "..."), current_userpath(current_user)

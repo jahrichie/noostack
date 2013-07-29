@@ -17,7 +17,7 @@ gem 'slim'
 gem 'heroku'
 gem 'devise'
 gem 'jquery-validation-rails'
-gem 'zurb-foundation', '~> 2.2'
+gem 'zurb-foundation', '~> 4.0.0'
 
 group :production do
   

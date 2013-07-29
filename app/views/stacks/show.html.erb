@@ -7,6 +7,7 @@
  <% end  %>
 
 <h1><%= @stack.name %></h1>
+
 <h3>Goals</h3>
 <ol id="goals">
   <% for goal in @stack.goals %> 
@@ -18,7 +19,8 @@
 <h3>ingredients</h3>
 <div class="this-stack">
   <% for ingredient in @stack.ingredients %> 
-    <%= stack_representation(ingredient).html_safe %>
+  <% _top_range = AppStyle::BACKGROUND_AND_FONT.size %>
+    <%= stack_representation(ingredient,_top_range).html_safe %>
   <% end  %>
 </div>
 

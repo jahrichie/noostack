@@ -1,4 +1,9 @@
-- @featured.each do |feat|
-  b = feat.name
-  - feat.ingredients.each do |ing|
-    b = stack_representation(ing).html_safe
+.cf
+ul.orbit-featured data-orbit=""
+  - @featured.each do |feat|
+    li
+      .this-stack
+        - feat.ingredients.each do |ing|
+          - _top_range = AppStyle::BACKGROUND_AND_FONT.size
+          = stack_representation(ing,_top_range).html_safe    
+      .orbit-caption = feat.name

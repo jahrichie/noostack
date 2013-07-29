@@ -15,10 +15,11 @@ Noo::Application.routes.draw do
  get 'users/:user' => 'stacks#by_user'
 
  get '/images' => 'stacks#get_images'
+ get '/list' => 'stacks#index'
 
   # get "welcome/index"
 
-  root :to => 'stacks#index'
+  root :to => 'stacks#hotness'
     
   # The priority is based upon order of creation:
   # first created -> highest priority.
